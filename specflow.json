@@ -1,0 +1,12 @@
+{
+  "specFlow": {
+    "unitTestProvider": "NUnit",
+    "plugins": [
+      {
+        "name": "SpecFlow.Plus.LivingDocPlugin",
+        "type": "Generator"
+      }
+    ],
+    "bindingCulture": "en-us"
+  }
+}

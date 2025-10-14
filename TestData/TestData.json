@@ -1,0 +1,88 @@
+{
+  "TestUsers": [
+    {
+      "Name": "TestUser1",
+      "Email": "test1@example.com",
+      "PartyTheme": "Zombies",
+      "GuestCount": "2"
+    },
+    {
+      "Name": "TestUser2", 
+      "Email": "test2@example.com",
+      "PartyTheme": "Ghosts",
+      "GuestCount": "1"
+    }
+  ],
+  "PartyThemes": [
+    "Zombies",
+    "Ghosts"
+  ],
+  "EmailAddresses": [
+    "test@example.com",
+    "automation@test.com",
+    "qa@testing.com",
+    "party@halloween.com"
+  ],
+  "NegativeTestData": {
+    "InvalidEmails": [
+      "plainaddress",
+      "@domain.com",
+      "username@",
+      "username@.com",
+      "username..@domain.com",
+      "username@domain",
+      "username@domain..com",
+      "<script>alert('xss')</script>@example.com",
+      "'; DROP TABLE users; --@example.com"
+    ],
+    "InvalidGuestCounts": [
+      "-1",
+      "1000",
+      "abc",
+      "2.5",
+      "2a",
+      "!@#",
+      "2+3"
+    ],
+    "SecurityTestData": {
+      "XSSAttempts": [
+        "<script>alert('xss')</script>",
+        "javascript:alert('xss')",
+        "<img src=x onerror=alert('xss')>",
+        "<svg onload=alert('xss')>"
+      ],
+      "SQLInjectionAttempts": [
+        "'; DROP TABLE users; --",
+        "' OR '1'='1",
+        "admin'--",
+        "' UNION SELECT * FROM users--"
+      ]
+    },
+    "BoundaryTestData": {
+      "MaxEmailLength": 254,
+      "MaxGuestCount": 100,
+      "MinGuestCount": 0
+    },
+    "ErrorMessages": {
+      "EmailValidation": [
+        "Please enter a valid email address",
+        "Invalid email format",
+        "Email is required"
+      ],
+      "GuestCountValidation": [
+        "Please enter a valid number of guests",
+        "Guest count must be a positive number",
+        "Guest count exceeds maximum limit",
+        "Guest count is required"
+      ],
+      "ThemeSelection": [
+        "Please select a party theme",
+        "Theme selection is required"
+      ],
+      "PartyOptionSelection": [
+        "Please select a party option",
+        "Party option selection is required"
+      ]
+    }
+  }
+}
