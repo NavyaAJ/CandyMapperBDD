@@ -1,5 +1,5 @@
-# CandyMapper BDD Test Framework
-
+# CandyMapper BDD Test Framework 
+Note: This entire framework is created using AI agents - Playwright MCP server and Builtin Agents from github Copilot
 A comprehensive Behavior-Driven Development (BDD) test framework built with SpecFlow, NUnit, and Microsoft Playwright for automated testing of the CandyMapper.com Halloween Party booking functionality.
 
 ## 🎯 Features
